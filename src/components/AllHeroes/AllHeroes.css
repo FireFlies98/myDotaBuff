@@ -1,0 +1,88 @@
+.main {
+    background-color: #1C242D;
+}
+
+.main_wrap {
+    width: 84%;
+    margin: auto;
+}
+
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 9vh 0 2vh;
+}
+
+.main_header_title {
+    font-weight: 800;
+}
+
+.heroes_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-bottom: 9vh;
+}
+
+.hero_block {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.heroes_img {
+    max-width: 100%;
+}
+
+.ppp {
+    position: absolute;
+    z-index: 1;
+    margin-top: 3.8em;
+    margin-left: .2em;
+    font-size: 14px;
+}
+
+.note-sumbol_red {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: rgba(234,3,14,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-sumbol_green {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: rgba(169,207,84,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.turbo_pick {
+    position: absolute;
+    z-index: 2;
+    margin-top: -3.4em;
+    margin-left: 7.1em;
+}
+
+.turbo_wins {
+    position: absolute;
+    z-index: 2;
+    margin-top: -3.4em;
+    margin-left: 5.6em;
+}
+
+.popular_rate {
+    display: flex;
+    align-items: center;
+}
+
+.popular_rate_text {
+    margin-left: .7em;
+    margin-right: 1em;
+}
+
