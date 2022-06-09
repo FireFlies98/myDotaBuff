@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import { Footer, Header, HeroStats, Home, LogIn } from './components';
+import './App.scss';
+import { Footer, Header, HeroStats, Home, LogIn, UnderDevelopment } from './components';
 import Logic from './containers/Logic'
 import {
   BrowserRouter,
@@ -21,6 +21,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/heroes' element={<Logic />} />
           <Route path='heroes/:Id' element={<HeroStats />} />
+          <Route path='/under_development' element={<UnderDevelopment />} />
         </Routes>
       <Footer />
       </BrowserRouter>

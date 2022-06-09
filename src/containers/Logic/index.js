@@ -1,6 +1,7 @@
 import  React from "react";
-import './Logic.css'
-import { AllHeroes } from '../../components'
+import './Logic.scss'
+import { AllHeroes, Loader } from '../../components'
+
 
 class Logic extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Logic extends React.Component {
         this.state = {
             heroesFromBack: [],
             name: '',
+            isLoading: true,
         }
     }
 
@@ -22,11 +24,20 @@ class Logic extends React.Component {
                 }
             })
         })
+        .catch((e) => console.error(e))
+        .finally(() => {
+            this.setState({ isLoading: false})
+        })
     }
+
+    
+
+    
 
     render() {
         return (
-            <>
+            <>  
+                {this.state.isLoading && <Loader />}
                 <AllHeroes heroesContainer={this.state.heroesFromBack} />
             </>
         )

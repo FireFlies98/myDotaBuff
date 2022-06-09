@@ -1,3 +1,6 @@
+@import '../../styles/mixins.scss';
+
+
 .main {
     background-color: #1C242D;
 }
@@ -5,12 +8,21 @@
 .main_wrap {
     width: 84%;
     margin: auto;
+
+    @include ladtop {
+        width: 99%;
+    }
 }
 
 .main_header {
     display: flex;
     justify-content: space-between;
     padding: 9vh 0 2vh;
+
+    @include ladtop {
+        padding: 5vh 0 2vh;
+        margin: 0 1vh;
+    }
 }
 
 .main_header_title {
@@ -21,11 +33,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding-bottom: 9vh;
+
+    @include ladtop {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-bottom: 5vh;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .hero_block {
     position: relative;
-    cursor: pointer;
     display: flex;
     justify-content: space-around;
     align-items: stretch;
@@ -36,12 +56,21 @@
     max-width: 100%;
 }
 
-.ppp {
+.hero_block_text {
     position: absolute;
     z-index: 1;
     margin-top: 3.8em;
     margin-left: .2em;
     font-size: 14px;
+
+    @include ladtop {
+        margin-top: 3.7em;
+        font-size: 13px;
+    }
+
+    @include phone {
+        margin-top: 4.5em;
+    }
 }
 
 .note-sumbol_red {
@@ -67,6 +96,14 @@
     z-index: 2;
     margin-top: -3.4em;
     margin-left: 7.1em;
+    
+    @include ladtop {
+        margin-left: 6.6em;
+    }
+
+    @include phone {
+        margin-left: 7.4em;
+    }
 }
 
 .turbo_wins {
@@ -74,6 +111,14 @@
     z-index: 2;
     margin-top: -3.4em;
     margin-left: 5.6em;
+
+    @include ladtop {
+        margin-left: 5.1em;
+    }
+
+    @include phone {
+        margin-left: 6em;
+    }
 }
 
 .popular_rate {
@@ -84,5 +129,16 @@
 .popular_rate_text {
     margin-left: .7em;
     margin-right: 1em;
+
+    @include ladtop {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+
+    @include phone {
+        margin-left: .3em;
+        margin-right: .2em;
+        font-size: 14px;
+    }
 }
 
