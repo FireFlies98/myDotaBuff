@@ -1,4 +1,4 @@
-# my-dotabuff
+# My DOTABUFF
 
 This project was created by Edgarov Vadim
 
