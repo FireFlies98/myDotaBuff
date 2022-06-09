@@ -1,4 +1,4 @@
-# node-dota-api
+# My DOTABUFF
 
 This project was created by Edgarov Vadim
 
