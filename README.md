@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# my-dotabuff
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by Edgarov Vadim
+
+A tool to fetch Dota stats for players, heroes, matches, and more!
+
+Based off of OpenDota's new API & Dota 2's Web API
 
 ## Available Scripts
 
