@@ -1,18 +1,11 @@
-import './AllHeroes.css'
+import './AllHeroes.scss'
 import { FaStar } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
 function AllHeroes(props) {
     const API = 'https://api.opendota.com'
-
-    const navigate = useNavigate();
-
-
-    const logOut = () => {
-        navigate('/login')
-    }
 
 
 
@@ -27,7 +20,7 @@ function AllHeroes(props) {
                             <p className='popular_rate_text'>TURBO PICK</p>
                             <div className='note-sumbol_green'><FaStar /></div>
                             <p className='popular_rate_text'>TURBO WIN</p>
-                            <button onClick={logOut}>Log Out</button>
+                            {/* <button onClick={logOut}>Log Out</button> */}
                         </div>
                     </div>
                     <div className='heroes_container'>
@@ -36,9 +29,9 @@ function AllHeroes(props) {
                                 <Link to={`/heroes/${item.localized_name}`} className='heroes_nav'>
                                     <div className='hero_block'>
                                         <img src={`${API + item.img}`} alt='hero' className='heroes_img' />
-                                        <p className='ppp'>{item.localized_name}</p>
-                                        {item.turbo_picks > 35000 && <div className='note-sumbol_red turbo_pick'><FaStar /></div>}
-                                        {item.turbo_wins > 25000 && <div className='note-sumbol_green turbo_wins'><FaStar /></div>}
+                                        <p className='hero_block_text'>{item.localized_name}</p>
+                                        {item.turbo_picks > 110000 && <div className='note-sumbol_red turbo_pick'><FaStar /></div>}
+                                        {item.turbo_wins > 65000 && <div className='note-sumbol_green turbo_wins'><FaStar /></div>}
                                     </div>
                                 </Link>
                             )

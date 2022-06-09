@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import './LogIn.css'
+import './LogIn.scss'
 
 export default function LogIn() {
 
@@ -23,7 +23,7 @@ export default function LogIn() {
 
     const userLogIn = () => {
         if (logInName === localStorage.name && logInPassword === localStorage.password) {
-            navigate('/heroes')
+            navigate('/')
         } else {
             setError(true)
         }
@@ -32,12 +32,17 @@ export default function LogIn() {
 
     return(
         <>
-            <div className='log_in'>
-                <input onChange={onChangeLogInName}></input>
-                <input onChange={onChangeLogInPassword}></input>
-                <button onClick={userLogIn}>Log In</button>
-                {error && <div>U looser</div>}
-            </div>
+            <main className='log_in_main'>
+                <div className='log_in_block'>
+                    <h1 className='log_in_title'>Test login in DOTABUFF</h1>
+                    <div className='input_log_in_block'>
+                        <input type='text' className='log_in_name' onChange={onChangeLogInName} placeholder='login name'></input>
+                        <input type='text' className='log_in_password' onChange={onChangeLogInPassword} placeholder='login password'></input>
+                        <button className='log_in_button' onClick={userLogIn}>Log In</button>
+                        {error && <div className='looser'>U looser :)</div>}
+                    </div>
+                </div>
+            </main>
         </>
     )
 }

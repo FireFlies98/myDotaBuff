@@ -1,11 +1,14 @@
-import './HeroStats.css'
+import './HeroStats.scss'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
+import { Loader } from '../index'
 
 export default function HeroStats() {
 
     const [heroStat, setHeroStat] = useState({})
+    const [loader, setLoader] = useState(true)
+
     const params = useParams()
     const API = 'https://api.opendota.com'
 
@@ -14,20 +17,18 @@ export default function HeroStats() {
         getHeroStats()
     }, [])
 
-    console.log(heroStat)
 
     const getHeroStats = async () => {
         const result = await axios ('https://api.opendota.com/api/heroStats')
-        .then((e) => {
-            const res = e.data.find((e) => e.localized_name === params.Id)
-            return res
-        })
-        setHeroStat(result)
+        setLoader(false)
+        const res = result.data.find((e) => e.localized_name === params.Id)
+        setHeroStat(res)
     }
 
 
     return (
         <>
+            {loader && <Loader />}
             <main className='hero_stat_main'>
                 <div className='hero_wrap'>
                     <div className='hero_header_wrap'>
