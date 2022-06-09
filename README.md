@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# node-dota-api
 
 This project was created by Edgarov Vadim
 
